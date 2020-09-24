@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/productos.css">
+    <title>CRUD - Productos</title>
+</head>
+<body>
+  <main class="container-fluid">
+    <!--Navbar-->
+    <%- include('../partials/headerNegro.ejs') %>
+    
+    <!--Listado de Productos-->
+    <section class="row container col-12">
+
+      <article class=" mt-5 titulo d-flex justify-content-center border-bottom border-dark col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <h4>Estadios para Conocer</h4>
+      </article>
+
+      <% for(let i = 0; i < estadios.length; i++){ %>
+      <article class="d-flex justify-content-center col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+        <div class="card" style="width: 18rem;">
+          <img src="images/estadios/<%= estadios[i].image%>" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h5 class="card-title"><%= estadios[i].stadiumName%></h5>
+            <p class="card-text"><%= estadios[i].description%></p>
+            <a href="/productos/detalle/<%= estadios[i].id%>" class="btn btn-dark">Ver detalle</a>
+          </div>
+        </div>
+      </article>
+
+    <% } %>
+
+      
+
+
+
+    </section>
+
+    <!--Footer-->
+    <%- include('../partials/footer.ejs') %>
+
+  </main>
+</body>
+</html>

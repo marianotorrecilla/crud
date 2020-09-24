@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/listaadmin.css">
+    <title>CRUD - Administrador</title>
+</head>
+<body>
+  <main class="container-fluid">
+    <!--Navbar-->
+    <%- include('../partials/headerNegro.ejs') %>
+    
+    <!--detalle admin-->
+    <section class="row container col-12">
+
+        <article class="titulo d-flex justify-content-center border-bottom border-dark col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <h5>Detalle Producto</h5>
+        </article>
+
+        <article class="fotoProducto col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex justify-content-center mt-2">
+            <div class="card bg-transparent text-white border-dark w-55 p-1 pt-3">
+              <figure class="">
+                <img src="/images/estadios/<%= miTour.image%> " class="card-img" alt="Estadio">
+              </figure>
+            </div>
+        </article>
+
+        <article class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+
+            <div class="row row-cols-1 row-cols-sm-12 row-cols-md-12 row-cols-lg-12 row-cols-xl-2 d-flex justify-content-center mt-2">
+              <div class="cartaUno col mb-4">
+                <div class="card h-100 border-dark">
+                  <div class="card-body text-center">
+                    <h4 class="card-title">Equipo: <%= miTour.footballTeam%></h4>
+                    <h4 class="card-title">Estadio: <%= miTour.stadiumName%></h4>
+                    <!--<h4 class="card-title">Estilo: </h4>-->
+                    <h4 class="card-title">Precio: $ <%= miTour.price %></h4>
+                    <p class="card-text"> Descripción: <%= miTour.description %></p>
+                    <a href="/administrador" class="btn btn-lg btn-danger" style="background-color: red ; border: red">Volver</a>
+                  </div>
+                </div>
+              </div>
+
+          </article>
+
+    </section>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+</body>
+</html>

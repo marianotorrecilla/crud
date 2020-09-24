@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/detalleproducto.css">
+    <title>CRUD - Detalle</title>
+
+</head>
+<body>
+  <main class="container-fluid">
+    <!--Navbar-->
+    <%- include('../partials/headerNegro.ejs') %>   
+    
+    <!--Listado de Productos-->
+    <section class="row container col-12 mt-4">
+
+        <article class="titulo d-flex justify-content-center col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <h5><%= miTourDetalle.stadiumName%></h5>
+        </article>
+
+          <article class="mt-4 d-flex justify-content-center col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="card bg-transparent text-white border-dark">
+              <figure class="estadio">
+                <img src="/images/estadios/<%= miTourDetalle.image%>" class="card-img" alt="estadio">
+              </figure>
+            </div>
+          </article>
+          
+        
+        <article class="d-flex justify-content-center mt-3 col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+  
+          <div class="row row-cols-1 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+            <div class="col mb-4">
+              <div class="card h-100 border-dark">
+                <div class="card-body">
+                  <p class="card-text text-center"><%= miTourDetalle.description%></p>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-4">
+              <div class="card h-100 border-dark">
+                <div class="card-body text-center">
+                  <h6 class="card-title">Precio: $<%= miTourDetalle.price%></h6>
+                  <p class="card-text">12 cuotas sin interes con Visa y Mastercard.</p>
+                  <a href="#" class="comprar"><button type="button" class="btn btn-dark btn-lg" style="background-color: black">COMPRAR</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        </article>
+
+
+
+      
+      
+    </section>
+
+    <!--Footer-->
+    <%- include('../partials/footer.ejs') %>
+    
+  </main>
+</body>
+</html>

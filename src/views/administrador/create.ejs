@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/final.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <title>CRUD - Administrador</title>
+</head>
+<body>
+    <main class="container col-8">
+      
+      <!--Navbar-->
+      <%- include('../partials/headerNegro.ejs') %>
+          <br><br><br>
+        <section class="seccion row">
+
+          
+          
+
+          <article class="titulo d-flex justify-content-center">
+            <h1 class="border-bottom border-dark col-12">CARGA DE PRODUCTO</h1>
+          </article>
+
+          <br><br>
+          
+          <article class="formulario col-12">
+            <!--errores del FRONT END-->
+            <div>
+              <ul id="errores">
+  
+              </ul>
+            </div>
+            <form id="createAdmin" action="/administrador/create" method="POST" enctype="multipart/form-data">
+              <div>
+                <ul id="errores">
+    
+                </ul>
+              </div>
+              <h6>Carga de imagen:</h6>
+              <br>
+              <div class="custom-file mb-3">
+                <input type="file" class="custom-file-input" id="validatedCustomFile" name="imagen" value="<%= typeof old != 'undefined' ? old.imagen : '' %>">
+                <label class="custom-file-label" for="validatedCustomFile">Archivo de imagen</label>
+                <% if(typeof errors != 'undefined' && errors.imagen){%>
+                  <span class="text-danger p-0.8" style="font-weight: 800;" > <%= errors.imagen.msg %></span>
+                  <%}%>
+              </div>
+
+              <br>
+
+              <div class="marca-modelo col-12">
+                <div class="col-6">
+                  <input type="text" placeholder="Nombre del Equipo" name="equipo" class="col-12 form-control"value="<%= typeof old != 'undefined' ? old.equipo : '' %>">
+                <% if(typeof errors != 'undefined' && errors.equipo){%>
+                  <span class="text-danger p-0.8" style="font-weight: 800;" > <%= errors.equipo.msg %></span>
+                  <%}%>
+                </div>
+
+                <div class="col-6">
+                  <input type="text" placeholder="Estadio" name="estadio" class="col-12 form-control"value="<%= typeof old != 'undefined' ? old.estadio : '' %>">
+                <% if(typeof errors != 'undefined' && errors.estadio){%>
+                  <span class="text-danger p-0.8" style="font-weight: 800;" > <%= errors.estadio.msg %></span>
+                  <%}%>
+                </div>
+              </div>
+
+              <br>
+
+              <div class="marca-modelo col-12">
+                <div class="col-5">
+                    <input type="number" placeholder="Precio" name="precio" class="col-12 form-control"value="<%= typeof old != 'undefined' ? old.precio : '' %>">
+                  <% if(typeof errors != 'undefined' && errors.precio){%>
+                    <span class="text-danger p-0.8" style="font-weight: 800;" > <%= errors.precio.msg %></span>
+                    <%}%>
+                  </div>
+              </div>
+                
+              <!--Descripciones-->
+              <div class="mb-3">
+                <br>
+                <textarea class="form-control" name="descripcion" id="validationTextarea" placeholder="Descripción del producto"value="<%= typeof old != 'undefined' ? old.descripcion : '' %>"></textarea>
+                <% if(typeof errors != 'undefined' && errors.descripcion){%>
+                  <span class="text-danger p-0.8" style="font-weight: 800;" > <%= errors.descripcion.msg %></span>
+                  <%}%>
+                <br>
+              </div>
+              
+              <div class="botones">
+              <button type="submit" class="btn btn-lg btn-dark" style="background-color: black">Cargar Producto</button>
+
+              <a href="/administrador" class="btn btn-lg btn-danger" style="background-color: red ; border: red">Volver</a>
+              <br><br><br>
+              </div>
+
+            </form>
+          </article>
+        </section>
+    </main>
+    
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <!--<script src="/js/createAdmin.js"></script>-->
+</body>
+</html>
