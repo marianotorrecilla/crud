@@ -2,8 +2,7 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const multer = require('multer');
-//const controlAcceso = require('../middlewares/controlAcceso');
-//const validacionCreateAdmin = require('../middlewares/validacionCreateAdmin');
+const controlAcceso = require('../middlewares/controlAcceso');
 const {check,validationResult,body} = require('express-validator');
 const db = require('../database/models/');
 const Article = db.Article;
@@ -22,9 +21,9 @@ const upload = multer({ storage })
 
 const adminController = require(path.resolve(__dirname,'..','controllers','adminController'));
 
-router.get('/administrador', adminController.admin);
-router.get('/administrador/search_results', adminController.search);
-router.get('/administrador/create', adminController.create);
+router.get('/administrador', controlAcceso, adminController.admin);
+router.get('/administrador/search_results', controlAcceso, adminController.search);
+router.get('/administrador/create', controlAcceso, adminController.create);
 
 Article.findAll()
   .then((article) =>{
@@ -54,8 +53,8 @@ Article.findAll()
 
 
 
-router.get('/administrador/detalleAdmin/:id', adminController.show);
-router.get('/administrador/edit/:id', adminController.edit);
+router.get('/administrador/detalleAdmin/:id', controlAcceso, adminController.show);
+router.get('/administrador/edit/:id', controlAcceso, adminController.edit);
 
 Article.findAll()
   .then((articles) =>{
@@ -80,7 +79,7 @@ Article.findAll()
 
 
 
-router.get('/administrador/delete/:id', adminController.destroy);
-router.get('/administrador/search_results', adminController.search);
+router.get('/administrador/delete/:id', controlAcceso, adminController.destroy);
+router.get('/administrador/search_results', controlAcceso, adminController.search);
 
 module.exports = router;

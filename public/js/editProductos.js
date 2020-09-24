@@ -11,58 +11,28 @@ window.addEventListener('load', function(){
     })
     function validaciones(evento){
         //con destructuring de codigo se declaran todas las variables y se igualan al elemento capturado (formulario), las variables usan el name del formulario y se colocan de manera ordenada a como estan en los inputs del form
-        let {colores, talle, rodado, marca, modelo, precio, descuento, cuotas, cantCuotas, estilo, descripcion, descripcionTecnica, imagen} = formulario.elements;
+        let {equipo, estadio, precio, descripcion, imagen} = formulario.elements;
         let errores = []; //se declara array de errores
         ulErrores.classList.add('alert-danger');
     
-        //validar el color
-        if(colores.value == ''){
-            errores.push('Indique el color');
-            colores.classList.add('is-invalid');
-            colores.classList.remove('is-valid');
+        //validar el equipo
+        if(equipo.value == ''){
+            errores.push('Indique el equipo de fútbol');
+            equipo.classList.add('is-invalid');
+            equipo.classList.remove('is-valid');
         }else{
-            colores.classList.add('is-valid');
-            colores.classList.remove('is-invalid');
+            equipo.classList.add('is-valid');
+            equipo.classList.remove('is-invalid');
         }
 
-        //validar talle
-        if(talle.value == ''){
-            errores.push('Indique el talle');
-            talle.classList.add('is-invalid');
-            talle.classList.remove('is-valid');
+        //validar estadio
+        if(estadio.value == ''){
+            errores.push('Indique el nombre del estadio');
+            estadio.classList.add('is-invalid');
+            estadio.classList.remove('is-valid');
         }else{
-            talle.classList.add('is-valid');
-            talle.classList.remove('is-invalid');
-        }
-
-        //validar rodado
-        if(rodado.value == ''){
-            errores.push('Indique el rodado');
-            rodado.classList.add('is-invalid');
-            rodado.classList.remove('is-valid');
-        }else{
-            rodado.classList.add('is-valid');
-            rodado.classList.remove('is-invalid');
-        }
-
-        //validar marca
-        if(marca.value == ''){
-            errores.push('Indique la marca');
-            marca.classList.add('is-invalid');
-            marca.classList.remove('is-valid');
-        }else{
-            marca.classList.add('is-valid');
-            marca.classList.remove('is-invalid');
-        }
-
-        //validar modelo
-        if(modelo.value == ''){
-            errores.push('Indique el modelo');
-            modelo.classList.add('is-invalid');
-            modelo.classList.remove('is-valid');
-        }else{
-            modelo.classList.add('is-valid');
-            modelo.classList.remove('is-invalid');
+            estadio.classList.add('is-valid');
+            estadio.classList.remove('is-invalid');
         }
 
         //validar precio
@@ -75,52 +45,14 @@ window.addEventListener('load', function(){
             precio.classList.remove('is-invalid');
         }
 
-        if(descuento.value == ''){
-            errores.push('Indique el descuento en caso de corresponder');
-            descuento.classList.add('is-invalid');
-            descuento.classList.remove('is-valid');
-        }else{
-            descuento.classList.add('is-valid');
-            descuento.classList.remove('is-invalid');
-        }
-
-        if(cuotas.value == ''){
-            errores.push('Indique si tiene cuotas');
-            cuotas.classList.add('is-invalid');
-            cuotas.classList.remove('is-valid');
-        }else{
-            cuotas.classList.add('is-valid');
-            cuotas.classList.remove('is-invalid');
-        }
-
-        //validar estilo
-        if(estilo.value == ''){
-            errores.push('Indique el estilo de la bicicleta');
-            estilo.classList.add('is-invalid');
-            estilo.classList.remove('is-valid');
-        }else{
-            estilo.classList.add('is-valid');
-            estilo.classList.remove('is-invalid');
-        }
-
         //validar descripción
         if(descripcion.value == ''){
-            errores.push('Indique la descripción de la bicicleta');
+            errores.push('Indique la descripción');
             descripcion.classList.add('is-invalid');
             descripcion.classList.remove('is-valid');
         }else{
             descripcion.classList.add('is-valid');
             descripcion.classList.remove('is-invalid');
-        }
-
-        //validar descripción técnica
-        if(descripcionTecnica.value == ''){
-            errores.push('Indique su descripción técnica');
-            descripcionTecnica.classList.add('is-invalid');
-            descripcionTecnica.classList.remove('is-valid');
-        }else{
-            descripcionTecnica.classList.add('is-valid');
-            descripcionTecnica.classList.remove('is-invalid');
         }
 
         /*if(image.value == ''){
