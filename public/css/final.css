@@ -15,6 +15,10 @@ form{
     font-family: 'Montserrat', sans-serif;
 }
 
+button, a {
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
 .titulo{
     text-align: center;
     position: relative;
